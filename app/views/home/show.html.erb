@@ -1,0 +1,35 @@
+
+
+<div id="trendlist" class="col-lg-6" style="padding: 15px 15px 5px 10px;">
+    <div class="well sponsor">
+    
+        <div class "align-left">
+			<h3> Top Local Twitter Trends </h3>
+				<div class = "pre-scrollable">
+				<table class="table table-striped">
+				
+				    <% for i in 0..(@ten_Name.length-1) %>
+					<tr>
+				        <th><%= link_to @ten_Name[i], home_getTrendData_path(foo_params: @ten_Name[i]) %></th>
+				   
+ 
+				    </tr>
+				    <%end%>
+					
+				</table>
+			</div>
+		</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div id="container" class = "col-lg-6" style="padding: 15px 15px 5px 10px;"> </div>
+	<%= render partial: 'shared/showGraph'%>
+</div>
+
+

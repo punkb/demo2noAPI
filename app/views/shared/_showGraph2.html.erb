@@ -1,0 +1,44 @@
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src ="/assets/javascripts/highcharts.js"></script>
+
+
+
+<script >
+$(function() {
+    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+
+        // Create the chart
+        $('#container').highcharts('StockChart', {
+            
+
+            //rangeSelector : {
+                inputEnabled: $('#container').width() > 480,
+                selected : 1
+            },
+
+            title : {
+                text : 'AAPL Stock Price'
+            },
+
+            navigator : {
+                enabled : false
+            },
+
+            series : [{
+                name : 'AAPL Stock Price',
+               
+                pointInterval: 900 * 1000,
+      pointStart: Date.UTC(2014, 0, 01),
+      data: 
+[107396, 85251, 103250, 80888, 48366, 48727, 84683, 164276, 105376, 59324, 95609, 97005, 146998, 131607, 87532, 37436, 136650, 134941, 24405, 48767, 62573, 72211, 35494, 37275, 37459, 91674, 239, 54298, 35828, 35792, 20981, 19295] ,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        });
+    });
+});
+
+</script>
